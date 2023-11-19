@@ -49,7 +49,3 @@ Isso executará o algoritmo de distribuição de doces com classificações de e
 
 - `Candy.java`: Contém a lógica para distribuir doces entre as crianças com base em suas classificações.
 - `Main.java`: Classe com o método `main` para testar o algoritmo de distribuição de doces.
-
-## Autor
-
-- [Nome do Autor](https://github.com/ARTHUR9011)
