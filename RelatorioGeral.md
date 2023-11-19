@@ -218,7 +218,7 @@ import (
 )
 
 ```
-![image.png](files/image.png)    
+![image.png](./go.png)    
 ```
 public class Candy {
     public int candy(int[] ratings) {
@@ -267,7 +267,7 @@ public class Candy {
 }
 
 ```
-![image.png](files/image_v.png)    
+![image.png](./java.png)    
 ```
 // Importa a biblioteca de logging do Rust
 use log::{info, debug};
@@ -336,7 +336,7 @@ env_logger = "0.12"
 log = "0.4"
 
 ```
-![image.png](files/image_f.png)    
+![image.png](./rust.png)    
    
 Os argumentos para resolver são um pouco diferentes do hackeRank, no hacker rank os argumento são um int n e um vetor, enquanto no leetcode existe apenas um argumento de entrada.    
    
