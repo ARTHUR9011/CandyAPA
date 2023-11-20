@@ -28,71 +28,6 @@ Formato de Entrada
 A primeira linha contém um número inteiro, , o tamanho de .
 Cada uma das próximas linhas contém um número inteiro  indicando a classificação do aluno na posição .
 
-Restrições   
-### Entrada de Amostra 0
-   
-```
-
-3
-1
-2
-2
-
-```
-**Saída de Amostra 0**:   
-```
-
-4
-
-```
-   
-### Entrada de Amostra 1:
-
-   
-```
-10
-2
-4
-2
-6
-1
-7
-8
-9
-2
-1
-```
-**Saída de Amostra 1**:   
-```
-
-19
-
-
-
-
-
-
-
-```
-### Entrada de Amostra 2:   
-   
-```
-8
-2
-4
-3
-5
-2
-6
-4
-5
-```
-**Saída de Amostra 2**:   
-```
-
-12
-
-```
    
    
 ## Linguagem para resolver o problemas:
@@ -342,3 +277,47 @@ Os argumentos para resolver são um pouco diferentes do hackeRank, no hacker ran
    
 algoritmo deve ser testado em máquinas diferentes (pelo menos duas), e o
 tempo de execução deve ser analisado.   
+
+
+
+
+## Print do sucesso no hackerank
+A função para candy no hacker precisa ser um pouco alterada, pois ela deve receber 2 argumentos: um vetor com as classificações e o número de alunos 
+
+```
+func candies(n int32, arr []int32) int64 {
+    if n <= 1 {
+        return int64(n)
+    }
+
+    candies := make([]int64, n)
+    candies[0] = 1
+
+    for i := int32(1); i < n; i++ {
+        if arr[i] > arr[i-1] {
+            candies[i] = candies[i-1] + 1
+        } else {
+            candies[i] = 1
+        }
+    }
+
+    total := candies[n-1]
+
+    for i := n - 2; i >= 0; i-- {
+        if arr[i] > arr[i+1] {
+            candies[i] = max64(candies[i], candies[i+1]+1)
+        }
+        total += candies[i]
+    }
+
+    return total
+}
+
+func max64(a, b int64) int64 {
+    if a > b {
+        return a
+    }
+    return b
+}
+```
+![image.png](./hackerRank.png)   
