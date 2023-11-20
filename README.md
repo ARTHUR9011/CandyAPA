@@ -352,4 +352,4 @@ func max64(a, b int64) int64 {
     return b
 }
 ```
-![image.png](./hackerRank.png)   
+![image.png](./hackerank.png)   
