@@ -309,8 +309,76 @@ Os argumentos para resolver são um pouco diferentes do hackeRank, no hacker ran
 algoritmo deve ser testado em máquinas diferentes (pelo menos duas), e o
 tempo de execução deve ser analisado.   
  
+# Como executar em cada linguagem
+## Execução em go
+
+Passo 1: Instalar o Go
+1. Download:
+	- Acesse o site oficial do Go e faça o download da versão mais recente do Go para o seu sistema operacional.
+2. Instalação:
+	- Siga as instruções de instalação fornecidas no site para o seu sistema operacional.
+3. Configurar GOPATH (Opcional, mas recomendado para desenvolvimento):
+	- Configure a variável de ambiente GOPATH para apontar para o diretório onde você deseja armazenar seus projetos Go. Adicione $GOPATH/bin ao seu PATH para que os executáveis sejam facilmente acessíveis.
 
 
+Passo 2: Executar o Programa
+1. Terminal:
+	- Abra um terminal ou prompt de comando.
+2. Navegar para o Diretório do Projeto:
+	- Use o comando cd para navegar até o diretório onde seu arquivo Go está localizado.
+3. Executar o Programa:
+	- Execute o comando go run seguido do nome do seu arquivo Go:
+
+```
+
+
+go run main.go
+
+```
+
+## Execução em Rust
+
+Instalar o Rust:
+Certifique-se de que o Rust está instalado no seu sistema. Se ainda não estiver instalado, você pode instalá-lo executando o seguinte comando no terminal:
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+Siga as instruções durante a instalação. Após a instalação, você pode precisar reiniciar o terminal ou executar o seguinte comando para atualizar as variáveis de ambiente:
+
+```
+source $HOME/.cargo/env
+```
+Criar um novo projeto:
+Crie um novo projeto Rust usando o seguinte comando:
+
+
+cargo new nome_do_projeto
+Isso criará um diretório chamado nome_do_projeto contendo os arquivos padrão de um projeto Rust.
+
+Copiar o código para o projeto:
+Copie o código fornecido para o arquivo main.rs dentro do diretório do seu novo projeto. Substitua o conteúdo gerado automaticamente pelo Cargo pelo seu código.
+
+Adicionar dependências ao Cargo.toml:
+Abra o arquivo Cargo.toml e adicione as seguintes linhas para incluir as dependências necessárias (log, env_logger e sys_info):
+
+
+```
+[dependencies]
+log = "0.4.14"
+env_logger = "0.10.0"
+sys-info = "0.15.0"
+Compilar e Executar:
+```
+No terminal, navegue até o diretório do seu projeto e execute o seguinte comando para compilar e executar o código:
+
+```
+cargo run
+```
+Isso compilará o código e executará o programa. Os resultados e logs devem aparecer no terminal.
+
+
+## Como Executar Java
 
 
 ## Print do sucesso no hackerank
