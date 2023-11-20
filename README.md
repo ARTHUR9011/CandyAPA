@@ -380,30 +380,49 @@ Isso compilará o código e executará o programa. Os resultados e logs devem ap
 
 ## Como Executar Java
 
-Pré-requisitos
-Java Development Kit (JDK) instalado para compilar e executar o código.
-Execução do Projeto
-Clone este repositório:
+## Como Usar
 
-git clone https://github.com/ARTHUR9011/CandyAPA.git
-Acesse o diretório do projeto:
+### Pré-requisitos
 
-cd CandyAPA
-Compile os arquivos Java:
+- Java Development Kit (JDK) instalado para compilar e executar o código.
 
-javac Candy.java Main.java
-Execute o programa:
+### Execução do Projeto
 
-java Main
+1. Clone este repositório:
+
+    ```bash
+    git clone https://github.com/ARTHUR9011/CandyAPA.git
+    ```
+
+2. Acesse o diretório do projeto:
+
+    ```bash
+    cd CandyAPA
+    ```
+
+3. Compile os arquivos Java:
+
+    ```bash
+    javac Candy.java Main.java
+    ```
+
+4. Execute o programa:
+
+    ```bash
+    java Main
+    ```
+
 Isso executará o algoritmo de distribuição de doces com classificações de exemplo e exibirá o total de doces atribuídos.
 
-Personalização
-Modifique as classificações de exemplo em Main.java para testar o algoritmo com diferentes conjuntos de dados.
-Dentro do arquivo Candy.java, é possível ajustar a lógica de distribuição de doces para atender a diferentes critérios, se necessário.
-Detalhes da Implementação
-Candy.java: Contém a lógica para distribuir doces entre as crianças com base em suas classificações.
-Main.java: Classe com o método main para testar o algoritmo de distribuição de doces.
+### Personalização
 
+- Modifique as classificações de exemplo em `Main.java` para testar o algoritmo com diferentes conjuntos de dados.
+- Dentro do arquivo `Candy.java`, é possível ajustar a lógica de distribuição de doces para atender a diferentes critérios, se necessário.
+
+## Detalhes da Implementação
+
+- `Candy.java`: Contém a lógica para distribuir doces entre as crianças com base em suas classificações.
+- `Main.java`: Classe com o método `main` para testar o algoritmo de distribuição de doces.
 ## Print do sucesso no hackerank
 A função para candy no hacker precisa ser um pouco alterada, pois ela deve receber 2 argumentos: um vetor com as classificações e o número de alunos 
 
