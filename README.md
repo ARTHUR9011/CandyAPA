@@ -29,7 +29,6 @@ A primeira linha contém um número inteiro, , o tamanho de .
 Cada uma das próximas linhas contém um número inteiro  indicando a classificação do aluno na posição .
 
    
-   
 ## Linguagem para resolver o problemas:
 
    
@@ -154,6 +153,16 @@ import (
 
 ```
 ![image.png](./go.png)    
+
+## Resultados em Go
+
+Ao executar o algoritmo Candies utilizando a linguagem Go, os resultados obtidos foram os seguintes:
+
+- **Tempo de Execução:** 7ms
+- **Taxa de Desempenho:** 99.77%, comparada a outros algoritmos testados
+- **Memória Utilizada:** 6.1MB
+- **Taxa de Memória:** 97.31%, comparada a outros algoritmos testados
+
 ```
 public class Candy {
     public int candy(int[] ratings) {
@@ -203,7 +212,20 @@ public class Candy {
 
 ```
 ![image.png](./java.png)    
+
+
+
+## Resultados em Java
+
+Durante a execução do algoritmo Candies utilizando Java, foram observados os seguintes resultados:
+
+- **Tempo de Execução:** 3ms
+- **Taxa de Desempenho:** 76.97%, comparada a outros algoritmos testados
+- **Memória Utilizada:** 43.7MB
+- **Taxa de Memória:** 42.8%, comparada a outros algoritmos testados
 ```
+
+...
 // Importa a biblioteca de logging do Rust
 use log::{info, debug};
 
@@ -271,12 +293,22 @@ env_logger = "0.12"
 log = "0.4"
 
 ```
-![image.png](./rust.png)    
+![image.png](./rust.png)
+
+## Resultados em Rust
+
+Ao executar o algoritmo Candies utilizando a linguagem Rust, os resultados foram os seguintes:
+
+- **Tempo de Execução:** 2ms
+- **Taxa de Desempenho:** 80.80%, comparada a outros algoritmos testados
+- **Memória Utilizada:** 2.3MB
+- **Taxa de Memória:** 59.60%, comparada a outros algoritmos testados
    
 Os argumentos para resolver são um pouco diferentes do hackeRank, no hacker rank os argumento são um int n e um vetor, enquanto no leetcode existe apenas um argumento de entrada.    
    
 algoritmo deve ser testado em máquinas diferentes (pelo menos duas), e o
 tempo de execução deve ser analisado.   
+ 
 
 
 
