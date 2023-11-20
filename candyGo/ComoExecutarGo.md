@@ -16,7 +16,8 @@ Passo 2: Executar o Programa
 	- Use o comando cd para navegar até o diretório onde seu arquivo Go está localizado.
 3. Executar o Programa:
 	- Execute o comando go run seguido do nome do seu arquivo Go:
-		```
+
+```
 
 
 go run main.go
