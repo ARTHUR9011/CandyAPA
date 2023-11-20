@@ -1,9 +1,15 @@
-    use log::{info, debug};
+use log::{info, debug};
+use sys_info;
 
     struct Solution;
 
     impl Solution {
         pub fn main() {
+
+        //  memória no início do programa
+        let mem_info = sys_info::mem_info().unwrap();
+
+    
             // Configuração do sistema de logging
             env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("debug")).init();
 
@@ -13,12 +19,26 @@
             // Chama a função candy
             let total = Solution::candy(ratings);
 
+         
+           
             // Imprime a quantidade total de doces
             println!("Quantidade total de doces atribuídos: {}", total);
+
+     
+
+        // Imprime a memória total (em KB)
+        println!("Memória total: {} KB", mem_info.total);
+
+        // Imprime a memória livre (em KB)
+        println!("Memória livre: {} KB", mem_info.free);
+
         }
 
         pub fn candy(ratings: Vec<i32>) -> i32 {
             
+            let start_time = std::time::Instant::now();
+           
+
             // Obtém o tamanho do vetor
             let n = ratings.len();
 
@@ -30,6 +50,8 @@
                 info!("Apenas uma criança ou nenhum. Retornando {} como a quantidade total de doces.", n);
                 return n as i32;
             }
+            
+         
 
             // Cria um vetor para armazenar a quantidade de doces atribuídos a cada criança
             let mut candies = vec![0; n];
@@ -60,16 +82,26 @@
                     
                     info!("Ajustando a quantidade de doces da criança {} para {}", i, candies[i]);
                 }
+
                 // Adiciona a quantidade de doces da criança atual ao total
                 total += candies[i];
             }
+         
+            
 
+            let elapsed_time = start_time.elapsed();
+            info!("Tempo gasto na função candy: {:?}", elapsed_time);
             // Log do resultado
             info!("Quantidade total de doces atribuídos: {}", total);
 
             // Retorna a quantidade total de doces atribuídos
             total
         }
+
+
+     
+
+
     }
 
     fn main() {
