@@ -7,6 +7,8 @@ Passo 1: Instalar o Go
 	- Siga as instruções de instalação fornecidas no site para o seu sistema operacional.
 3. Configurar GOPATH (Opcional, mas recomendado para desenvolvimento):
 	- Configure a variável de ambiente GOPATH para apontar para o diretório onde você deseja armazenar seus projetos Go. Adicione $GOPATH/bin ao seu PATH para que os executáveis sejam facilmente acessíveis.
+
+
 Passo 2: Executar o Programa
 1. Terminal:
 	- Abra um terminal ou prompt de comando.
