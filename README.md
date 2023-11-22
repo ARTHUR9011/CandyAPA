@@ -426,6 +426,7 @@ Isso executará o algoritmo de distribuição de doces com classificações de e
 ## Print do sucesso no hackerank
 A função para candy no hacker precisa ser um pouco alterada, pois ela deve receber 2 argumentos: um vetor com as classificações e o número de alunos 
 
+# Go HackerRank
 ```
 func candies(n int32, arr []int32) int64 {
     if n <= 1 {
@@ -463,3 +464,67 @@ func max64(a, b int64) int64 {
 }
 ```
 ![image.png](./hackerank.png)   
+# Java HackerRank
+## Novamente para implementação do Java a assinatura é um pouco alterada para funcionar no hackarrank
+```
+  public static long candies(int n, List<Integer> arr) {
+        long[] candies = new long[n];
+
+        for (int i = 0; i < n; i++) {
+            candies[i] = 1;
+        }
+
+        for (int i = 1; i < n; i++) {
+            if (arr.get(i) > arr.get(i - 1)) {
+                candies[i] = candies[i - 1] + 1;
+            }
+        }
+
+        for (int i = n - 2; i >= 0; i--) {
+            if (arr.get(i) > arr.get(i + 1)) {
+                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
+            }
+        }
+
+        long total = 0;
+        for (long candy : candies) {
+            total += candy;
+        }
+
+        return total;
+    }
+```
+
+![image.png](./submitJava.png)
+
+
+## Rust HackerRank
+
+A execução do rust no hackeRank teve problemas em 2 casos de teste ao executar. Por ser uma linguagem não tão conhecida pelo grupo, não conseguimos identificar o problema.
+```
+fn candies(n: i32, arr: &[i32]) -> i64 {
+    let n = arr.len();
+    let mut candies = vec![1; n];
+    let mut total = 0;
+
+    for i in 1..n {
+        if arr[i] > arr[i - 1] {
+            candies[i] = candies[i - 1] + 1;
+        }
+    }
+
+    for i in (0..n - 1).rev() {
+        if arr[i] > arr[i + 1] {
+            candies[i] = std::cmp::max(candies[i], candies[i + 1] + 1);
+        }
+    }
+
+    for &c in &candies {
+        total += c;
+    }
+
+    total as i64
+}
+```
+
+![image.png](./submitRust.png)
