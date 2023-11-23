@@ -1,4 +1,4 @@
-![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/9107831e-7094-4580-97ce-d079e39863c1)# Relatorio APA   
+# Relatorio APA   
    
    
 # Candies   
@@ -539,11 +539,23 @@ fn candies(n: i32, arr: &[i32]) -> i64 {
 
 
 ![WhatsApp Image 2023-11-22 at 10 44 21 PM](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/d503eca5-c315-4b44-8e92-891755a57864)
+![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/7e755149-87c2-4b43-9d78-75ff5c655a91)
 
+Média do uso de memória: 0.15Mb
+
+Média do tempo de execução: 82.499μ
 
 
 ## Rust
 ![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/81f3e972-098d-410c-84d9-48c31e3b935d)
+![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/38ff16b9-f3e5-426b-b144-e0b34548061b)
+![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/3b1a7d7e-2021-4148-aea4-a8ef599e8d28)
+
+Média de uso de memória:
+
+Média do uso de memória: 17.323
+
+Média do tempo de execução: 64.75μ
 
 
 ## Java
