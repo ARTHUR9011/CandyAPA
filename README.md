@@ -1,4 +1,4 @@
-# Relatorio APA   
+![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/9107831e-7094-4580-97ce-d079e39863c1)# Relatorio APA   
    
    
 # Candies   
@@ -528,3 +528,22 @@ fn candies(n: i32, arr: &[i32]) -> i64 {
 ```
 
 ![image.png](./submitRust.png)
+
+
+
+# Execução do código em pcs diferentes
+
+## Go
+
+![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/99f1565d-58ee-4951-9526-e5f6ee6a3342)
+
+
+![WhatsApp Image 2023-11-22 at 10 44 21 PM](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/d503eca5-c315-4b44-8e92-891755a57864)
+
+
+
+## Rust
+![image](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/81f3e972-098d-410c-84d9-48c31e3b935d)
+
+
+## Java
