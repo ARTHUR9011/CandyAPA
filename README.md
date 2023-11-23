@@ -71,11 +71,45 @@ Java e golang foram utilizadas pela familiaridade dos integrantes do grupo. A li
 - A função max faz o trabalho de calcular o máximo entre 2 numeros. Portanto, usamos para garantir que a quantidade destribuida seja feita corretamente durante passagem do vetor. Ela foi separada para manter o código mais legível.   
 - No java é substituido um import equivalante: `Math.max`   
    
-   
-#    
+------------------------
+
+#  Código Go   
    
 ```
+package main
 
+
+
+
+
+func main() {
+	// Classificações de exemplo
+	ratings := []int{1, 2, 3,2, 1, 4}
+
+	// Inicia a contagem do tempo
+	startTime := time.Now()
+
+	// Chama a função candy com as classificações de exemplo
+	result := candy(ratings)
+
+	// Finaliza a contagem do tempo
+	endTime := time.Now()
+
+	// Imprime o resultado
+	log.Printf("Resultado: %d", result)
+
+	// Calcula e imprime o tempo de execução
+	elapsedTime := endTime.Sub(startTime)
+	log.Printf("Tempo de execução: %s", elapsedTime)
+
+	// Obtém e imprime o uso de memória
+	var m runtime.MemStats
+	runtime.ReadMemStats(&m)
+	// Convertendo para megabytes (MB)
+	memoryUsageMB := float64(m.Alloc) / 1024 / 1024
+	log.Print("Uso de memória: ", m.Alloc, " bytes")
+	log.Printf("Uso de memória: ~%.2f MB", memoryUsageMB)
+}
 
 func candy(ratings []int) int {
 	// Define n como o tamanho do vetor
@@ -132,6 +166,7 @@ func candy(ratings []int) int {
 	return total
 }
 
+
 // Calcula o máximo entre dois inteiros
 func max(a, b int) int {
 	if a > b {
@@ -139,16 +174,15 @@ func max(a, b int) int {
 	}
 	return b
 }
-
-
 ```
 ## Imports   
    
 ```
 
 import (
-	"fmt"
 	"log"
+	"runtime"
+	"time"
 )
 
 ```
@@ -162,7 +196,9 @@ Ao executar o algoritmo Candies utilizando a linguagem Go, os resultados obtidos
 - **Taxa de Desempenho:** 99.77%, comparada a outros algoritmos testados
 - **Memória Utilizada:** 6.1MB
 - **Taxa de Memória:** 97.31%, comparada a outros algoritmos testados
+----------------------------
 
+# Código Java
 ```
 public class Candy {
     public int candy(int[] ratings) {
@@ -223,16 +259,46 @@ Durante a execução do algoritmo Candies utilizando Java, foram observados os s
 - **Taxa de Desempenho:** 76.97%, comparada a outros algoritmos testados
 - **Memória Utilizada:** 43.7MB
 - **Taxa de Memória:** 42.8%, comparada a outros algoritmos testados
-```
 
-...
-// Importa a biblioteca de logging do Rust
+-----------------------------
+# Código Rust
+```
 use log::{info, debug};
+use sys_info;
+
+struct Solution;
 
 impl Solution {
+    pub fn main() {
+        // memória no início do programa
+        let mem_info = sys_info::mem_info().unwrap();
+
+        // Configuração do sistema de logging
+        env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("debug")).init();
+
+        // Cria um vetor de classificações
+        let ratings = vec![1, 2,3,2,1,4];
+
+        // Chama a função candy
+        let total = Solution::candy(ratings);
+
+        // Imprime a quantidade total de doces
+        println!("Quantidade total de doces atribuídos: {}", total);
+
+        // Imprime a memória total (em KB)
+        println!("Memória total: {} KB", mem_info.total);
+
+        // Imprime a memória livre (em KB)
+        println!("Memória livre: {} KB", mem_info.free);
+
+        // Imprime a memória usada (em MB)
+        println!("Memória usada: {:.2} MB", mem_info.total as f64 / 1024.0 / 1024.0);
+        println!("Memória Livre  {:.2} MB", mem_info.free as f64 / 1024.0 / 1024.0 )
+
+    }
+
     pub fn candy(ratings: Vec<i32>) -> i32 {
-        // Inicializa o sistema de logging
-        env_logger::init();
+        let start_time = std::time::Instant::now();
 
         // Obtém o tamanho do vetor
         let n = ratings.len();
@@ -272,19 +338,22 @@ impl Solution {
             if ratings[i] > ratings[i + 1] {
                 // Se a próxima criança tem mais doces, nada muda
                 candies[i] = std::cmp::max(candies[i], candies[i + 1] + 1);
+                info!("Ajustando a quantidade de doces da criança {} para {}", i, candies[i]);
             }
+
             // Adiciona a quantidade de doces da criança atual ao total
             total += candies[i];
         }
 
-        // Log do resultado
-        info!("Quantidade total de doces atribuídos: {}", total);
-
-        // Retorna a quantidade total de doces atribuídos
+        let elapsed_time = start_time.elapsed();
+        info!("Tempo gasto na função candy: {:?}", elapsed_time);
         total
     }
 }
 
+fn main() {
+    Solution::main();
+}
 ```
 ## Imports   
 ```
@@ -558,4 +627,22 @@ Média do uso de memória: 17.323
 Média do tempo de execução: 64.75μ
 
 
-## Java
+## Gráficos
+
+# Tempo de Execução
+![tempo](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/526c90c0-059e-47b3-ad77-039dbd63c7ec)
+
+
+Ao análisar o tempo de execução com 2 linguagens em 4 máquinas diferentes(sendo uma o sistema do leet code) é percebido que o leet code tem um processamento menor, mas que ainda sim muito rápido. O array de entrada para os testes foi curto, mas acreditamos que para uma análise simples funcione. 
+
+# Uso de Memoria
+![memoria](https://github.com/ARTHUR9011/CandyAPA/assets/101375701/f00fa1a0-2bfc-40ce-bfab-c6a4e6055ba0)
+
+Analisando a memória utilizada, é percebido que o uso de memória do java é muito maior em relação ao resto das linguagens. Mas que talvez o leetcode não seja o melhor local para avaliar esse parâmetro.
+Como melhor execução o Go em máquina local deve o melhor desempenho. 
+
+---------------
+
+# Referencias:
+
+https://stackoverflow.com/questions/31742428/combinatorics-the-candies
