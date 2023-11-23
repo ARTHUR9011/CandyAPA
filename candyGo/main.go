@@ -1,10 +1,42 @@
 package main
 
-import "log"
+import (
+	"log"
+	"runtime"
+	"time"
+)
+
+
 
 func main() {
+	// Classificações de exemplo
+	ratings := []int{1, 2, 3,2, 1, 4}
 
+	// Inicia a contagem do tempo
+	startTime := time.Now()
+
+	// Chama a função candy com as classificações de exemplo
+	result := candy(ratings)
+
+	// Finaliza a contagem do tempo
+	endTime := time.Now()
+
+	// Imprime o resultado
+	log.Printf("Resultado: %d", result)
+
+	// Calcula e imprime o tempo de execução
+	elapsedTime := endTime.Sub(startTime)
+	log.Printf("Tempo de execução: %s", elapsedTime)
+
+	// Obtém e imprime o uso de memória
+	var m runtime.MemStats
+	runtime.ReadMemStats(&m)
+	// Convertendo para megabytes (MB)
+	memoryUsageMB := float64(m.Alloc) / 1024 / 1024
+	log.Print("Uso de memória: ", m.Alloc, " bytes")
+	log.Printf("Uso de memória: ~%.2f MB", memoryUsageMB)
 }
+
 func candy(ratings []int) int {
 	// Define n como o tamanho do vetor
 	n := len(ratings)
