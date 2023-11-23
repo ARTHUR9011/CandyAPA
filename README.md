@@ -622,7 +622,7 @@ Média do tempo de execução: 82.499μ
 
 Média de uso de memória:
 
-Média do uso de memória: 17.323
+Média do uso de memória: 17.323mb
 
 Média do tempo de execução: 64.75μ
 
